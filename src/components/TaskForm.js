@@ -49,9 +49,6 @@ const TaskForm = (props) => {
   function disabledDate(current) {
     return current && current < moment().startOf("day");
   }
-  function onChange(date, dateString) {
-    console.log(date, dateString);
-  }
 
   const { Option } = Select;
 
@@ -187,7 +184,7 @@ const TaskForm = (props) => {
     if (isEdit && selectedTask) {
       form.setFieldsValue(formatInitialData(selectedTask));
     }
-  }, [isEdit, selectedTask]);
+  }, [isEdit, selectedTask, form]);
 
   return (
     <Spin spinning={isLoading}>
