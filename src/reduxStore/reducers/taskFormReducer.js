@@ -28,6 +28,7 @@ export default function taskFormReducer(
 
     case SET_TASK_FORM_VISIBLITY:
       state = { ...state, taskFormVisible: action.data };
+      break;
 
     default:
       state = { ...state };
