@@ -1,0 +1,66 @@
+.each_task_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.each_task_container:hover {
+  background-color: #edf7fc;
+}
+
+.eachTask_left_main {
+  display: flex;
+}
+.each_task_left_details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.eachTask_right_main {
+  display: flex;
+  margin: 5px;
+}
+
+.eachTask_right_icon_left,
+.eachTask_right_icon_right {
+  border: 2px solid rgb(180, 179, 179);
+  padding: 5px;
+}
+
+.eachTask_right_icon_left {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 1px solid rgb(180, 179, 179);
+}
+
+.eachTask_right_icon_right {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 1px solid rgb(180, 179, 179);
+}
+
+.eachTask_right_icon_left:hover,
+.eachTask_right_icon_right:hover,
+.eachTask_edit_icon:hover {
+  fill: #fff;
+  background-color: #47bb7f;
+  border: 2px solid #47bb7f;
+}
+.eachTask_right_icon_left:hover {
+  border-right: 1px solid #47bb7f;
+}
+.eachTask_right_icon_right:hover {
+  border-left: 1px solid #47bb7f;
+}
+
+.eachTask_edit_icon {
+  border: 2px solid rgb(180, 179, 179);
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: none;
+}
+
+.each_task_container:hover > .eachTask_right_main > .eachTask_edit_icon {
+  display: block;
+}

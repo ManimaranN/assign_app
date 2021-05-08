@@ -1,0 +1,11 @@
+.wrapper_container {
+  margin: 150px 0 0 30px;
+}
+.add_task_icon:hover {
+  color: #47bb7f;
+  font-weight: bolder;
+}
+
+.wrapper_container .ant-card-small > .ant-card-body {
+  padding: 0;
+}

@@ -1,0 +1,28 @@
+.task_form_container {
+  background-color: #edf7fc;
+  padding: 20px;
+}
+
+.deadline_field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task_form_actions_container {
+  display: flex;
+  justify-content: space-between;
+}
+.task_form_actions_container_right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.task_form_actions_container_left:hover {
+  fill: #ff3333;
+}
+
+.submit_btn {
+  background-color: #47bb7f;
+  color: #fff;
+}
