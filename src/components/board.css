@@ -9,3 +9,10 @@
 .wrapper_container .ant-card-small > .ant-card-body {
   padding: 0;
 }
+.no_data_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
