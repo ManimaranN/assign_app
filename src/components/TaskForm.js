@@ -20,6 +20,7 @@ import {
   setTaskFormVisiblity,
   handleReloadTaskList,
   handleSetIsEdit,
+  handleFetchSelectedTask,
 } from "../reduxStore/actions/taskFormActions";
 import { createNewTask, deleteTask, updateTask } from "../apiActions";
 import { formatInitialData } from "../utils/dataFormatter";
@@ -58,6 +59,8 @@ const TaskForm = (props) => {
 
   const handleCancel = () => {
     setTaskFormVisiblity(false);
+    handleSetIsEdit(false);
+    handleFetchSelectedTask({});
     form.resetFields();
   };
 
@@ -86,6 +89,7 @@ const TaskForm = (props) => {
             handleReloadTaskList();
             handleSetIsEdit(false);
             form.resetFields();
+            handleFetchSelectedTask({});
             setTaskFormVisiblity(false);
           }
         }
@@ -156,7 +160,9 @@ const TaskForm = (props) => {
             );
             handleReloadTaskList();
             handleSetIsEdit(false);
+            handleFetchSelectedTask({});
             setTaskFormVisiblity(false);
+            form.resetFields();
           }
         }
         //failure case can be handled here
@@ -194,20 +200,47 @@ const TaskForm = (props) => {
         layout="vertical"
         className="task_form_container"
       >
-        <Form.Item label="Task Description" name="task_msg">
+        <Form.Item
+          label="Task Description"
+          name="task_msg"
+          rules={[
+            {
+              required: true,
+              message: "Description is required!",
+            },
+          ]}
+        >
           <Input />
         </Form.Item>
         <div className="deadline_field">
-          <Form.Item label="Date" name="task_date">
+          <Form.Item
+            label="Date"
+            name="task_date"
+            rules={[
+              {
+                required: true,
+                message: "Date is required!",
+              },
+            ]}
+          >
             <DatePicker disabledDate={disabledDate} onChange={onChange} />
           </Form.Item>
-          <Form.Item label="Time" name="task_time">
+          <Form.Item
+            label="Time"
+            name="task_time"
+            rules={[
+              {
+                required: true,
+                message: "Time is required!",
+              },
+            ]}
+          >
             <TimePicker format={format} />
           </Form.Item>
         </div>
 
         <Form.Item name="assigned_user" label="Assign User">
-          <Select defaultValue={selectedTask?.assigned_user}>
+          <Select defaultValue={"Saravanan 23"}>
             {userOptions?.map((user) => {
               return (
                 <Option key={user.user_id} value={user.user_id}>
@@ -249,6 +282,7 @@ const mapDispatchToProps = {
   setTaskFormVisiblity,
   handleReloadTaskList,
   handleSetIsEdit,
+  handleFetchSelectedTask,
 };
 const mapStatesToProps = (state) => {
   return {

@@ -6,7 +6,7 @@ export const formatInitialData = (rawData) => {
     task_msg: rawData.task_msg,
     task_date: moment(rawData.task_date),
     task_time: moment(rawData.task_time),
-    assigned_user: rawData.assigned_user,
+    // assigned_user: rawData.assigned_user,
   };
 
   return intialData;

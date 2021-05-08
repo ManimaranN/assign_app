@@ -14,7 +14,12 @@ import EmptyIcon from "../svg/EmptyIcon";
 
 const { Text } = Typography;
 const Board = (props) => {
-  const { setTaskFormVisiblity, taskFormVisible, reloadTaskList } = props;
+  const {
+    setTaskFormVisiblity,
+    taskFormVisible,
+    reloadTaskList,
+    isEdit,
+  } = props;
   const [taskList, settaskList] = useState([]);
   const [isLoading, setisLoading] = useState(false);
 
@@ -76,7 +81,7 @@ const Board = (props) => {
                   <Text strong>Add new task</Text>
                 </div>
               )}
-          {taskFormVisible && <TaskForm />}
+          {taskFormVisible && !isEdit && <TaskForm />}
         </Spin>
       </Card>
     </div>
@@ -88,6 +93,7 @@ const mapStatesToProps = (state) => {
   return {
     taskFormVisible: state.taskFormReducer.taskFormVisible,
     reloadTaskList: state.taskFormReducer.reloadTaskList,
+    isEdit: state.taskFormReducer.isEdit,
   };
 };
 
