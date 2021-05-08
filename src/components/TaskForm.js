@@ -216,6 +216,7 @@ const TaskForm = (props) => {
           <Form.Item
             label="Date"
             name="task_date"
+            className="deadline_date_field"
             rules={[
               {
                 required: true,
@@ -228,6 +229,7 @@ const TaskForm = (props) => {
           <Form.Item
             label="Time"
             name="task_time"
+            className="deadline_time_field"
             rules={[
               {
                 required: true,

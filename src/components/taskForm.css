@@ -7,6 +7,12 @@
   display: flex;
   justify-content: space-between;
 }
+.deadline_date_field {
+  margin-right: 10px;
+}
+.deadline_time_field {
+  margin-left: 10px;
+}
 
 .task_form_actions_container {
   display: flex;
