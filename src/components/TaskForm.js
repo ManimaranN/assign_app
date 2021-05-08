@@ -249,7 +249,6 @@ const TaskForm = (props) => {
               );
             })}
           </Select>
-          ,
         </Form.Item>
 
         <div className="task_form_actions_container">

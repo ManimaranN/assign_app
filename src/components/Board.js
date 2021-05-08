@@ -68,6 +68,7 @@ const Board = (props) => {
         style={{ width: 380 }}
       >
         <Spin spinning={isLoading}>
+          {taskFormVisible && !isEdit && <TaskForm />}
           {taskList?.length > 0
             ? taskList?.map((task) => {
                 return <EachTask key={task.id} task={task} />;
@@ -81,7 +82,6 @@ const Board = (props) => {
                   <Text strong>Add new task</Text>
                 </div>
               )}
-          {taskFormVisible && !isEdit && <TaskForm />}
         </Spin>
       </Card>
     </div>
